@@ -34,11 +34,11 @@ if (form) {
     try {
       const res = await fetch(form.action, { method: "POST", body: data, headers: { Accept: "application/json" } });
       const json = await res.json().catch(() => ({}));
-      if (!res.ok || json.success === "false" || json.success === false) throw new Error();
+      if (!res.ok || json.success === "false" || json.success === false) throw new Error(json.message || "");
       form.reset();
       show("ok", "Thanks. We've got your project. An estimator will confirm scope and timing shortly.");
-    } catch {
-      show("err", `Something went wrong. Please email ${form.dataset.email} instead.`);
+    } catch (err) {
+      show("err", err.message || `Something went wrong. Please email ${form.dataset.email} instead.`);
     } finally {
       btn.disabled = false;
     }
