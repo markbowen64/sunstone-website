@@ -70,6 +70,7 @@ FOOTER = f'''<footer class="site-footer">
       <div>
         <img src="/assets/img/sunstone-logo-horizontal-white.svg" alt="Sunstone Data Systems" width="240" height="48">
         <p>Low-voltage infrastructure for commercial and multifamily construction. Fiber, structured cabling, security cameras, and access control.</p>
+        <p>A wholly owned subsidiary of Southroad Holding Inc., Dallas, Texas.</p>
       </div>
       <div>
         <h4>Services</h4>
@@ -87,7 +88,7 @@ FOOTER = f'''<footer class="site-footer">
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; <span data-year>2026</span> Sunstone Data Systems. All rights reserved.</span>
+      <span>&copy; <span data-year>2026</span> Sunstone Data Systems, a wholly owned subsidiary of Southroad Holding Inc., Dallas, Texas. All rights reserved.</span>
       <span><a href="/privacy.html">Privacy</a></span>
     </div>
   </div>
@@ -337,6 +338,7 @@ about = f'''<section class="page-hero"><div class="container">
     <span class="eyebrow">How we're set up</span>
     <h2>Subcontractor to the GC. Accountable for the whole scope.</h2>
     <p>We contract with the general contractor or developer for the low-voltage package, then staff the job with trained installation crews under our supervision. One point of contact for the estimate, the schedule, the installation, and the closeout documents.</p>
+    <p>Sunstone Data Systems is a wholly owned subsidiary of <strong>Southroad Holding Inc.</strong>, headquartered in Dallas, Texas.</p>
     <p>We work best on large, multi-building projects where the low-voltage scope is broad: fiber backbone, unit cabling, network rooms, cameras, and access control all on the same site.</p>
   </div>
   <div class="facts">
@@ -357,7 +359,7 @@ about = f'''<section class="page-hero"><div class="container">
 </div></section>
 {cta()}'''
 page("about.html", "About | Sunstone Data Systems",
-     "Sunstone Data Systems is a low-voltage subcontractor for commercial and multifamily construction in Dallas-Fort Worth and Texas.",
+     "Sunstone Data Systems, a wholly owned subsidiary of Southroad Holding Inc. of Dallas, Texas, is a low-voltage subcontractor for commercial and multifamily construction.",
      about, "about.html")
 
 # ---------- Request a Bid ----------
