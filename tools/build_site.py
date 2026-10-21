@@ -1,9 +1,12 @@
 """Generates the static Sunstone site pages with a shared header and footer."""
 import os
+import time
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 EMAIL = "contact@sunstonedatasystems.com"
 SITE = "https://www.sunstonedatasystems.com"
+# Bumped on every build so browsers fetch the latest CSS and JS.
+VERSION = str(int(time.time()))
 
 ICONS = {
     "cabling": '<svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="10" rx="1.5"/><path d="M9 3v3M12 3v3M15 3v3M12 13v8"/></svg>',
@@ -107,7 +110,7 @@ FOOTER = f'''<footer class="site-footer">
     </div>
   </div>
 </footer>
-<script src="/assets/js/main.js" defer></script>'''
+<script src="/assets/js/main.js?v={VERSION}" defer></script>'''
 
 
 def page(filename, title, desc, body, active=None):
@@ -130,7 +133,7 @@ def page(filename, title, desc, body, active=None):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/styles.css?v={VERSION}">
 </head>
 <body>
 {header(active)}
