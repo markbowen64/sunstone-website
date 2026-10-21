@@ -2,7 +2,7 @@
 import os
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
-EMAIL = "bids@sunstonedatasystems.com"
+EMAIL = "contact@sunstonedatasystems.com"
 SITE = "https://www.sunstonedatasystems.com"
 
 ICONS = {

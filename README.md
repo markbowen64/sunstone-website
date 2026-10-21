@@ -26,14 +26,14 @@ Small one-off edits can also go straight into the `.html` files, but they'll be 
 Preview locally: `npx http-server .` and open http://localhost:8080.
 
 ## Before launch: confirm these
-- **Email**: the site uses `bids@sunstonedatasystems.com`. Create that mailbox (or forward it) in GoDaddy / Microsoft 365 / Google Workspace, or change `EMAIL` in `tools/build_site.py`.
+- **Email**: the site uses `contact@sunstonedatasystems.com`. Create that mailbox (or forward it) in GoDaddy / Microsoft 365 / Google Workspace, or change `EMAIL` in `tools/build_site.py`.
 - **Service area**: the site says "Dallas–Fort Worth and Texas" (assumed). Change in `tools/build_site.py` if wrong.
 - **Phone**: not shown yet. Add it to the header/footer when ready.
 - **Licensing, insurance, certifications**: About page says "available on request". Replace with real license numbers and certifications once confirmed.
 - **Form**: see below. Until it's connected, the form opens the visitor's email app with the request filled in.
 
 ## Connect the bid form (5 minutes)
-1. Create a free account at https://formspree.io and add a new form that emails `bids@sunstonedatasystems.com`.
+1. Create a free account at https://formspree.io and add a new form that emails `contact@sunstonedatasystems.com`.
 2. Copy the form ID (the part after `/f/`).
 3. In `tools/build_site.py`, replace `YOUR_FORM_ID` with it and run the build script (or edit `request-a-bid.html` directly).
 
