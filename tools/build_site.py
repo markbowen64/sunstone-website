@@ -3,7 +3,7 @@ import os
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 EMAIL = "bids@sunstonedatasystems.com"
-SITE = "https://sunstonedatasystems.com"
+SITE = "https://www.sunstonedatasystems.com"
 
 ICONS = {
     "cabling": '<svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="10" rx="1.5"/><path d="M9 3v3M12 3v3M15 3v3M12 13v8"/></svg>',
