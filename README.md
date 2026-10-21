@@ -30,12 +30,12 @@ Preview locally: `npx http-server .` and open http://localhost:8080.
 - **Service area**: the site says "Dallas–Fort Worth and Texas" (assumed). Change in `tools/build_site.py` if wrong.
 - **Phone**: not shown yet. Add it to the header/footer when ready.
 - **Licensing, insurance, certifications**: About page says "available on request". Replace with real license numbers and certifications once confirmed.
-- **Form**: see below. Until it's connected, the form opens the visitor's email app with the request filled in.
 
-## Connect the bid form (5 minutes)
-1. Create a free account at https://formspree.io and add a new form that emails `contact@sunstonedatasystems.com`.
-2. Copy the form ID (the part after `/f/`).
-3. In `tools/build_site.py`, replace `YOUR_FORM_ID` with it and run the build script (or edit `request-a-bid.html` directly).
+## Bid form
+The form posts to FormSubmit (https://formsubmit.co), which emails each submission to contact@sunstonedatasystems.com as a table. No account is needed.
+- The first submission triggers a one-time "Activate form" email to contact@. Click the link in it; until then submissions are held.
+- To change the recipient, change `EMAIL` in `tools/build_site.py` and rerun the build (you'll get a new activation email).
+- Large drawing sets come in as links (Dropbox, Google Drive, plan room) rather than file uploads.
 
 ## Deploy: GitHub → Vercel → GoDaddy
 1. **GitHub**: create an empty repo (e.g. `sunstone-website`) and push this folder to it.

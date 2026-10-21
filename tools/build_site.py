@@ -402,8 +402,11 @@ form = f'''<section class="page-hero"><div class="container">
   <p class="lead">A full IFC set gets the most accurate bid, but we can work from schematics for budgeting.</p>
 </div></section>
 <section class="section"><div class="container form-wrap">
-  <form class="bid-form" id="bid-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-email="{EMAIL}">
+  <form class="bid-form" id="bid-form" action="https://formsubmit.co/ajax/{EMAIL}" method="POST" data-email="{EMAIL}">
     <input type="hidden" name="_subject" value="New bid request: sunstonedatasystems.com">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
     <div class="form-grid">
       <div class="field"><label for="name">Name <span class="req">*</span></label><input id="name" name="name" required autocomplete="name"></div>
       <div class="field"><label for="company">Company <span class="req">*</span></label><input id="company" name="company" required autocomplete="organization"></div>
@@ -440,7 +443,7 @@ page("request-a-bid.html", "Request a Bid | Sunstone Data Systems",
 privacy = f'''<section class="page-hero"><div class="container"><h1>Privacy</h1></div></section>
 <section class="section"><div class="container" style="max-width:800px">
 <p>Sunstone Data Systems collects the information you submit through our bid request form (name, company, contact details, and project information) only to respond to your request and prepare a bid.</p>
-<p>We do not sell or share your information with third parties, except the form-processing service that delivers your submission to us.</p>
+<p>We do not sell or share your information with third parties, except the form-processing service (FormSubmit) that delivers your submission to us by email.</p>
 <p>To ask about or remove your information, email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
 </div></section>'''
 page("privacy.html", "Privacy | Sunstone Data Systems", "Privacy policy for Sunstone Data Systems.", privacy)
