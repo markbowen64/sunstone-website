@@ -274,3 +274,40 @@ fieldset { border: 0; padding: 0; margin: 0; }
   .bid-card { padding: 18px; font-size: .8rem; }
   .bid-card .hide-sm { display: none; }
 }
+
+/* Photography */
+.hero--photo {
+  background:
+    linear-gradient(90deg, rgba(6,20,48,.96) 0%, rgba(6,20,48,.86) 45%, rgba(6,20,48,.55) 100%),
+    url("../img/photos/hero-construction.jpg") center/cover no-repeat,
+    var(--navy-900);
+}
+.hero--photo::before { opacity: .25; }
+.card--photo { padding: 0; overflow: hidden; }
+.card--photo .card-img { width: 100%; height: 190px; object-fit: cover; transition: transform .4s ease; }
+a.card--photo:hover .card-img { transform: scale(1.04); }
+.card--photo .card-body { padding: 0 28px 28px; position: relative; }
+.card--photo .icon { margin-top: -25px; position: relative; box-shadow: 0 6px 16px rgba(11,35,80,.25); }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.gallery figure { margin: 0; position: relative; border-radius: var(--radius); overflow: hidden; background: var(--navy-900); }
+.gallery .g-wide { grid-column: span 2; }
+.gallery img { width: 100%; height: 100%; min-height: 260px; max-height: 360px; object-fit: cover; }
+.gallery figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 14px; color: #fff; font-weight: 600; font-size: .92rem;
+  background: linear-gradient(transparent, rgba(6,20,48,.88));
+}
+.service-photos { display: grid; gap: 14px; margin-bottom: 22px; }
+.service-photos.n2 { grid-template-columns: 1fr 1fr; }
+.service-photos img { width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius); }
+.service-photos.n2 img { height: 240px; }
+@media (max-width: 1000px) {
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .gallery .g-wide { grid-column: span 2; }
+}
+@media (max-width: 640px) {
+  .gallery { grid-template-columns: 1fr; }
+  .gallery .g-wide { grid-column: auto; }
+  .gallery img { min-height: 220px; }
+  .service-photos.n2 { grid-template-columns: 1fr; }
+  .service-photos img, .service-photos.n2 img { height: 220px; }
+}

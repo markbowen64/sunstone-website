@@ -17,9 +17,9 @@ CHECK = '<span class="check"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L1
 
 SERVICES = [
     ("structured-cabling", "cabling", "Structured Cabling",
-     "Cat-6 and Cat-6A horizontal cabling, terminated, labeled, and certified with Fluke test reports.",
+     "Cat-5e, Cat-6, and Cat-6A horizontal cabling, terminated, labeled, and certified with Fluke test reports.",
      "Every building system now rides on the horizontal cabling, from unit data to access points, cameras, and building controls. We pull, dress, terminate, and label it to the drawings, then certify every link and hand you the reports.",
-     ["Cat-6 and Cat-6A horizontal drops", "Jacks, faceplates, and patch panel termination", "Cable support, J-hooks, and firestop at penetrations", "Labeling to the drawing schedule", "Fluke certification of every link"],
+     ["Cat-5e, Cat-6, and Cat-6A horizontal drops", "Jacks, faceplates, and patch panel termination", "Cable support, J-hooks, and firestop at penetrations", "Labeling to the drawing schedule", "Fluke certification of every link"],
      ["Conduit, sleeves, and backboxes by others", "Line voltage power", "Active network equipment", "Material, unless the bid is furnish-and-install"]),
     ("fiber-optic", "fiber", "Fiber Optic Installation and Splicing",
      "Single-mode backbone and fiber-to-the-unit, fusion splicing, splice closures, and OTDR and OLTS testing.",
@@ -47,6 +47,20 @@ SERVICES = [
      ["Ceiling and wall AP mounting", "AP cabling and termination", "Labeling to the AP schedule", "Exterior and weatherproof enclosures"],
      ["Wireless design and surveys", "Controllers, licensing, and configuration", "Access points, unless furnished by Sunstone"]),
 ]
+
+PHOTOS = {
+    "structured-cabling": [("cat6-termination", "Technician terminating Cat-6 cable bundles on a patch panel"), ("cable-testing", "Technician certifying a copper link with a handheld cable tester")],
+    "fiber-optic": [("fiber-splicing", "Fusion splicing single-mode fiber beside a splice closure"), ("fiber-pulling", "Crew pulling fiber from a reel into a handhole on a multifamily site")],
+    "mdf-idf": [("mdf-racks", "MDF racks with dressed Cat-6 patch panels, fiber enclosures, and overhead cable tray")],
+    "security-cameras": [("pole-camera", "Technician installing a multi-sensor camera and NEMA enclosure on a pole")],
+    "access-control": [("access-control", "Technician wiring a card reader at an amenity building entrance")],
+    "wireless": [("wireless-ap", "Ceiling-mounted wireless access point in a clubhouse lounge")],
+}
+
+
+def img(name, alt, cls="", eager=False):
+    return f'<img class="{cls}" src="/assets/img/photos/{name}.jpg" alt="{alt}" width="1200" height="805"{"" if eager else " loading=\"lazy\""} decoding="async">'
+
 
 NAV = [("services.html", "Services"), ("index.html#markets", "Markets"), ("how-we-bid.html", "How We Bid"), ("about.html", "About")]
 
@@ -89,7 +103,7 @@ FOOTER = f'''<footer class="site-footer">
     </div>
     <div class="footer-bottom">
       <span>&copy; <span data-year>2026</span> Sunstone Data Systems, a wholly owned subsidiary of Southroad Holding Inc., Dallas, Texas. All rights reserved.</span>
-      <span><a href="/privacy.html">Privacy</a></span>
+      <span>Photos are representative. <a href="/privacy.html">Privacy</a></span>
     </div>
   </div>
 </footer>
@@ -140,10 +154,10 @@ def cta(title="Have a project out for bid?", text="Send the drawing set and bid 
 
 # ---------- Home ----------
 service_cards = "".join(
-    f'<a class="card" href="/services.html#{s[0]}"><div class="icon">{ICONS[s[1]]}</div><h3>{s[2]}</h3><p>{s[3]}</p><span class="more">Learn more &rarr;</span></a>'
+    f'<a class="card card--photo" href="/services.html#{s[0]}">{img(*PHOTOS[s[0]][0], cls="card-img")}<div class="card-body"><div class="icon">{ICONS[s[1]]}</div><h3>{s[2]}</h3><p>{s[3]}</p><span class="more">Learn more &rarr;</span></div></a>'
     for s in SERVICES)
 
-home = f'''<section class="hero">
+home = f'''<section class="hero hero--photo">
   <div class="container">
     <div>
       <span class="eyebrow" style="color:var(--cyan-400)">Low-voltage subcontractor</span>
@@ -232,7 +246,24 @@ home = f'''<section class="hero">
   </div>
 </section>
 
-<section class="section section--soft" id="markets">
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">In the field</span>
+      <h2>What the work looks like.</h2>
+      <p class="lead">From the reel at the handhole to the last certified link in the MDF.</p>
+    </div>
+    <div class="gallery">
+      <figure class="g-wide">{img("fiber-pulling", "Crew pulling fiber from a reel into a handhole on a multifamily site")}<figcaption>Fiber pulling: feeder and drops through handholes and conduit</figcaption></figure>
+      <figure>{img("fiber-splicing", "Fusion splicing single-mode fiber beside a splice closure")}<figcaption>Fusion splicing and splice closures</figcaption></figure>
+      <figure>{img("cat6-termination", "Technician terminating Cat-6 cable bundles on a patch panel")}<figcaption>Cat-5e / 6 / 6A termination</figcaption></figure>
+      <figure>{img("cable-testing", "Technician certifying a copper link with a handheld cable tester")}<figcaption>Certification testing on every link</figcaption></figure>
+      <figure>{img("mdf-racks", "MDF racks with dressed Cat-6 patch panels, fiber enclosures, and overhead cable tray")}<figcaption>MDF / IDF racks, patch panels, and fiber enclosures</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="markets">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Markets</span>
@@ -256,6 +287,7 @@ subnav = "".join(f'<a href="#{s[0]}">{s[2]}</a>' for s in SERVICES)
 blocks = "".join(f'''<article class="service" id="{s[0]}">
   <aside><div class="icon">{ICONS[s[1]]}</div><h2>{s[2]}</h2></aside>
   <div>
+    <div class="service-photos n{len(PHOTOS[s[0]])}">{"".join(img(n, a) for n, a in PHOTOS[s[0]])}</div>
     <p class="lead">{s[4]}</p>
     <div class="service-cols">
       <div><h4>What's included</h4><ul>{"".join(f"<li>{i}</li>" for i in s[5])}</ul></div>

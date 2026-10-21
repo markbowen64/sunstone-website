@@ -46,3 +46,6 @@ Preview locally: `npx http-server .` and open http://localhost:8080.
    - Edit the **CNAME** for `www` to the value Vercel shows (usually `cname.vercel-dns.com`).
    - Leave MX / email records alone.
 5. Wait for Vercel to show "Valid Configuration" (minutes to a few hours). Vercel issues the HTTPS certificate automatically.
+
+## Photos
+`assets/img/photos/` holds AI-generated representative images (no completed Sunstone jobs yet). The footer notes "Photos are representative." Replace them with real job photos as projects finish; keep the same file names and a 3:2 crop around 1200px wide.
