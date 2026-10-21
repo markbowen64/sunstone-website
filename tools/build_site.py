@@ -71,7 +71,7 @@ def header(active):
     return f'''<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <nav class="container nav" aria-label="Main">
-    <a class="brand" href="/" aria-label="Sunstone Data Systems home"><img src="/assets/img/sunstone-logo-horizontal.svg" alt="Sunstone Data Systems" width="230" height="46"></a>
+    <a class="brand" href="/" aria-label="Sunstone Data Systems home"><img src="/assets/img/sunstone-logo-horizontal.svg" alt="Sunstone Data Systems" width="230" height="46"><span class="brand-parent">A Southroad Holdings Company</span></a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="nav-links">{links}<li><a class="btn btn--primary" href="/request-a-bid.html">Request a Bid</a></li></ul>
   </nav>
@@ -84,7 +84,7 @@ FOOTER = f'''<footer class="site-footer">
       <div>
         <img src="/assets/img/sunstone-logo-horizontal-white.svg" alt="Sunstone Data Systems" width="240" height="48">
         <p>Low-voltage infrastructure for commercial and multifamily construction. Fiber, structured cabling, security cameras, and access control.</p>
-        <p>A wholly owned subsidiary of Southroad Holding Inc., Dallas, Texas.</p>
+        <p>A wholly owned subsidiary of Southroad Holdings Inc., Dallas, Texas.</p>
       </div>
       <div>
         <h4>Services</h4>
@@ -102,7 +102,7 @@ FOOTER = f'''<footer class="site-footer">
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; <span data-year>2026</span> Sunstone Data Systems, a wholly owned subsidiary of Southroad Holding Inc., Dallas, Texas. All rights reserved.</span>
+      <span>&copy; <span data-year>2026</span> Sunstone Data Systems, a wholly owned subsidiary of Southroad Holdings Inc., Dallas, Texas. All rights reserved.</span>
       <span>Photos are representative. <a href="/privacy.html">Privacy</a></span>
     </div>
   </div>
@@ -370,7 +370,7 @@ about = f'''<section class="page-hero"><div class="container">
     <span class="eyebrow">How we're set up</span>
     <h2>Subcontractor to the GC. Accountable for the whole scope.</h2>
     <p>We contract with the general contractor or developer for the low-voltage package, then staff the job with trained installation crews under our supervision. One point of contact for the estimate, the schedule, the installation, and the closeout documents.</p>
-    <p>Sunstone Data Systems is a wholly owned subsidiary of <strong>Southroad Holding Inc.</strong>, headquartered in Dallas, Texas.</p>
+    <p>Sunstone Data Systems is a wholly owned subsidiary of <strong>Southroad Holdings Inc.</strong>, headquartered in Dallas, Texas.</p>
     <p>We work best on large, multi-building projects where the low-voltage scope is broad: fiber backbone, unit cabling, network rooms, cameras, and access control all on the same site.</p>
   </div>
   <div class="facts">
@@ -391,7 +391,7 @@ about = f'''<section class="page-hero"><div class="container">
 </div></section>
 {cta()}'''
 page("about.html", "About | Sunstone Data Systems",
-     "Sunstone Data Systems, a wholly owned subsidiary of Southroad Holding Inc. of Dallas, Texas, is a low-voltage subcontractor for commercial and multifamily construction.",
+     "Sunstone Data Systems, a wholly owned subsidiary of Southroad Holdings Inc. of Dallas, Texas, is a low-voltage subcontractor for commercial and multifamily construction.",
      about, "about.html")
 
 # ---------- Request a Bid ----------

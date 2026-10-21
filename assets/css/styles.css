@@ -73,7 +73,7 @@ p { margin: 0 0 1em; }
   backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 24px; }
-.brand img { height: 54px; width: auto; }
+.brand img { height: 50px; width: auto; }
 .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
 .nav-links a { text-decoration: none; color: var(--ink); font-weight: 600; font-size: .95rem; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--blue-600); }
@@ -311,3 +311,8 @@ a.card--photo:hover .card-img { transform: scale(1.04); }
   .service-photos.n2 { grid-template-columns: 1fr; }
   .service-photos img, .service-photos.n2 img { height: 220px; }
 }
+
+/* Parent company line under the header logo */
+.brand { display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; gap: 2px; }
+.brand-parent { font-family: var(--head); font-size: .68rem; font-weight: 600; letter-spacing: .06em; color: var(--blue-600); padding-left: 64px; line-height: 1; }
+@media (max-width: 920px) { .brand-parent { font-size: .6rem; padding-left: 47px; } }
